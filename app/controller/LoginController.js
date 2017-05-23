@@ -1,6 +1,6 @@
 class LoginController {
     postLoginAction(req, res) {
-        console.log();
+        console.log('Login page');
     }
 }
 
