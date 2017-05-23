@@ -1,6 +1,7 @@
 //const fs = require('fs');
 const path = require('path');
 const express = require('express');
+const formulaire = require('formulaire');
 
 const SignUpController = require('./controller/SignUpController');
 const LoginController = require('./controller/LoginController');
@@ -19,4 +20,27 @@ app.set('view', path.join(__dirname, '/../view'));
 app.post('/signup', signUpCtrl.postSignUpAction);
 app.post('/login', loginCtrl.postLoginAction);
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+var form = formulaire({
+    formClass : 'form',
+    formId : 'formulario_ID',
+    action: '/send',
+    method: 'post',
+    fieldClassWrapper: 'form-group',
+    fieldClass: 'form-control',
+    submit: {
+        type: 'link',
+        clase: 'btn btn-primary sender',
+        href: 'javascript:void(0)',
+        onclick: null,
+        value: 'Enviar'
+    },
+    fields: {
+        surname: { type: 'text', required: true},
+        email: { type: 'email', required: true},
+        password: { type: 'password', required: true},
+    },
+});
+
+console.log(formulaire);
