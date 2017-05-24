@@ -1,5 +1,5 @@
 class LoginController {
-    postLoginAction(req, res) {
+    getLoginAction(req, res) {
         //console.log('Login page');
         res.render('loginAction');
     }

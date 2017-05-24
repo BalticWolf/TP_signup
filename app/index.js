@@ -16,8 +16,9 @@ app.set('view engine', 'pug');
 app.set('view', path.join(__dirname, '/../view'));
 
 // Définition du mapping
-app.get('/', signUpCtrl.postSignUpAction);
-//app.post('/login', loginCtrl.postLoginAction);
+app.get('/', signUpCtrl.getSignUpAction);
+app.get('/login', loginCtrl.getLoginAction);
+
 
 // Confirmer le démarrage du serveur
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
