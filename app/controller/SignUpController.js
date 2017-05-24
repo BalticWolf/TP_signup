@@ -9,6 +9,7 @@ class SignUpController {
 	  	let password = req.body.password;
 	  	let confirmPassword = req.body.confirmPassword;
 	 	console.log("valeurs= " +name+ " " +email+ " " +password+ " " +confirmPassword);
+        res.render('loginAction');
     }
 }
 

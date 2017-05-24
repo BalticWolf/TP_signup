@@ -22,11 +22,11 @@ app.set('views', path.join(__dirname, '/../view'));
 
 // Définition du mapping
 app.get('/', signUpCtrl.getSignUpAction);
-app.get('/login', loginCtrl.getLoginAction);
+//app.get('/login', loginCtrl.getLoginAction);
 
 // Confirmer le démarrage du serveur
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 // Récupération des données post
-app.post('/', signUpCtrl.postSignUpAction);
+app.use('/login', signUpCtrl.postSignUpAction);
 
