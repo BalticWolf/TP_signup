@@ -20,18 +20,18 @@ app.set('view', path.join(__dirname, '/../view'));
 app.post('/signup', signUpCtrl.postSignUpAction);
 app.post('/login', loginCtrl.postLoginAction);
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Vous pouvez vous connecter à 127.0.0.1:8081 `))
 
 var form = formulaire({
     formClass : 'form',
-    formId : 'formulario_ID',
+    formId : 'formulaire_ID',
     action: '/send',
     method: 'post',
     fieldClassWrapper: 'form-group',
     fieldClass: 'form-control',
     submit: {
         type: 'link',
-        clase: 'btn btn-primary sender',
+        class: 'btn btn-primary sender',
         href: 'javascript:void(0)',
         onclick: null,
         value: 'Enviar'
