@@ -4,7 +4,7 @@
   "description": "TP signup",
   "main": "index.js",
   "scripts": {
-    "start": "node app/index.js 8081"
+    "start": "node app/index.js 8082"
   },
   "repository": {
     "type": "git",
