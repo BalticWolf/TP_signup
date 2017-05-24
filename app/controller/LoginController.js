@@ -1,6 +1,6 @@
 class LoginController {
     getLoginAction(req, res) {
-        res.render('signAction');
+        res.render('loginAction');
     }
 }
 
