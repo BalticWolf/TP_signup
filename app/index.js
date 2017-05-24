@@ -13,11 +13,12 @@ const loginCtrl = new LoginController();
 
 // Définition de l'emplacement des templates de génération de vues
 app.set('view engine', 'pug');
-app.set('view', path.join(__dirname, '/../view'));
+app.set('views', path.join(__dirname, '/../view'));
 
 // Définition du mapping
-app.post('/signup', signUpCtrl.postSignUpAction);
-app.post('/login', loginCtrl.postLoginAction);
+app.get('/', signUpCtrl.getSignUpAction);
+//app.post('/login', loginCtrl.postLoginAction);
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 

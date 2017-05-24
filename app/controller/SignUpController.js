@@ -1,6 +1,7 @@
 class SignUpController {
-    postSignUpAction(req, res) {
-        console.log('Sign-up page');
+    getSignUpAction(req, res) {
+        //console.log('Sign-up page');
+        res.render('signAction');
     }
 }
 
