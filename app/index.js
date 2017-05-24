@@ -28,4 +28,5 @@ app.get('/login', loginCtrl.getLoginAction);
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
 // Récupération des données post
-//app.post('/', signUpCtrl.postSignUpAction);
+app.post('/', signUpCtrl.postSignUpAction);
+
