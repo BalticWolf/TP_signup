@@ -1,12 +1,19 @@
 //const fs = require('fs');
 const path = require('path');
 const express = require('express');
+var bodyParser = require("body-parser");
 
 const SignUpController = require('./controller/SignUpController');
 const LoginController = require('./controller/LoginController');
+
 const UserController = require ('./controller/UserController');
+
+// Serveur
 const port = process.argv[2] || 3000;
 const app = express();
+
+// Module de parsing
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const signUpCtrl = new SignUpController();
 const loginCtrl = new LoginController();
@@ -17,7 +24,8 @@ app.set('views', path.join(__dirname, '/../view'));
 
 // Définition du mapping
 app.get('/', signUpCtrl.getSignUpAction);
-//app.post('/login', loginCtrl.postLoginAction);
+app.get('/login', loginCtrl.getLoginAction);
+
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
@@ -63,3 +71,7 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
         });
     });
 });*/
+
+// Récupération des données post
+app.post('/', signUpCtrl.postSignUpAction);
+
