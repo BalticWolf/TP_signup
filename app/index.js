@@ -15,7 +15,7 @@ const app = express();
 // Module de parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const signUpCtrl = new SignUpController();
+const signUpCtrl = new SignUpController(path);
 const loginCtrl = new LoginController();
 
 // Définition de l'emplacement des templates de génération de vues
@@ -73,6 +73,4 @@ app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 });*/
 
 // Récupération des données post
-app.use('/login', signUpCtrl.postSignUpAction);
-
-
+app.use('/login', signUpCtrl.postSignUpAction.bind(signUpCtrl));
