@@ -13,10 +13,10 @@ const loginCtrl = new LoginController();
 
 // Définition de l'emplacement des templates de génération de vues
 app.set('view engine', 'pug');
-app.set('view', path.join(__dirname, '/../view'));
+app.set('views', path.join(__dirname, '/../view'));
 
 // Définition du mapping
-app.get('/', signUpCtrl.postSignUpAction);
+app.get('/', signUpCtrl.getSignUpAction);
 //app.post('/login', loginCtrl.postLoginAction);
 
 // Confirmer le démarrage du serveur
