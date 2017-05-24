@@ -1,4 +1,4 @@
-extends layout
+include layoutAction
 
 block content
     .main.container
@@ -7,7 +7,7 @@ block content
                 h1.display-4.m-b-2 Sign Up
 
                 // register form
-                form(method='POST' action='/LOGIN')
+                form(method='POST' action='/login')
                     div.form-group
                         label(for='em') Email:
                         input#em.form-control(type='email' name='email')
