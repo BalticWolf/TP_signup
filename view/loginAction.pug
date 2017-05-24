@@ -1,0 +1,15 @@
+block content
+    .main.container
+        .row
+            .col-md-6.col-md-offset-3
+                h1.display-4.m-b-2 Sign Up
+
+                // register form
+                form(method='POST' action='/LOGIN')
+                    div.form-group
+                        label(for='em') Email:
+                        input#em.form-control(type='email' name='email')
+                    div.form-group
+                        label(for='pw') Password:
+                        input#pw.form-control(type='password' name='Password')
+                    button.btn.btn-primary(type='submit') Login
