@@ -31,8 +31,7 @@ class LoginController {
                 return;
             }
         });
-        //res.render('loginAction');
-        console.log('utilisateur inconnu')
+        res.render('loginAction');
     }
 }
 
