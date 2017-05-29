@@ -5,7 +5,7 @@ class LoginController {
     }
 
     getLoginAction(req, res) {
-        res.render('loginAction');
+        res.render('login');
     }
 
     postLoginAction(req, res) {
@@ -27,10 +27,10 @@ class LoginController {
         users.forEach(item => {
             const user = item.trim().split(',');
             if (user[1] === email && user[2] === password) {
-                res.render('profileAction');
+                res.redirect('/profile');
                 return;
             } else {
-                res.render('loginAction');
+                res.redirect('/login');
                 return;
             }
 

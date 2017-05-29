@@ -30,7 +30,11 @@ app.get('/', signUpCtrl.getSignUpAction);
 app.get('/login', signUpCtrl.getLoginAction.bind(signUpCtrl));
 
 app.post('/login', signUpCtrl.postSignUpAction.bind(signUpCtrl));
+console.log("test");
 app.post('/profile', loginCtrl.postLoginAction.bind(loginCtrl));
 app.post('/profileEmail', userCtrl.listEmailAction.bind(userCtrl));
 
+
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
