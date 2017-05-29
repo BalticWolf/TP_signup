@@ -1,5 +1,5 @@
 class SignUpController {
-    constructor(path){
+    constructor(path, fs){
         this._path=path;
         this._fs = fs;
     }
