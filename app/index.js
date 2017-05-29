@@ -1,4 +1,4 @@
-//const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
 const express = require('express');
 var bodyParser = require("body-parser");
@@ -16,8 +16,10 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const signUpCtrl = new SignUpController(path);
-const loginCtrl = new LoginController();
+
+const loginCtrl = new LoginController(path, fs);
 const userCtrl = new UserController();
+
 
 // Définition de l'emplacement des templates de génération de vues
 app.set('view engine', 'pug');
@@ -25,14 +27,10 @@ app.set('views', path.join(__dirname, '/../view'));
 
 // Définition du mapping
 app.get('/', signUpCtrl.getSignUpAction);
-//app.get('/login', loginCtrl.getLoginAction);
+app.get('/login', signUpCtrl.getLoginAction.bind(signUpCtrl));
 
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
-
-
-// Récupération des données post
 app.use('/login', signUpCtrl.postSignUpAction.bind(signUpCtrl));
-
+app.use('/profile', loginCtrl.postLoginAction.bind(loginCtrl));
 app.use('/profile', userCtrl.postProfileAction);
 
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));

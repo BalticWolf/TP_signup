@@ -6,12 +6,12 @@ block content
             .col-md-6.col-md-offset-3
                 h1.display-4.m-b-2 Login
 
-                // register form
-                form(method='POST' action='/login')
+                // login form
+                form(method='POST' action='/profile')
                     div.form-group
                         label(for='em') Email:
                         input#em.form-control(type='email' name='email')
                     div.form-group
                         label(for='pw') Password:
-                        input#pw.form-control(type='password' name='Password')
+                        input#pw.form-control(type='password' name='password')
                     button.btn.btn-primary(type='submit') Login
