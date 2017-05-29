@@ -1,5 +1,11 @@
 Blin,test@test.fr,123
+<<<<<<< HEAD
 Timo,timothee.aupetit@gmail.com,1234
 Thomas,thomas@test.fr,abcd
 Thomas,thomas@test.fr,1234
 Thomas,thomas@test.fr,test
+=======
+Timo,timothee.aupetit@gmail.com,1234,,
+sarah,sarah.drapeau@hotmail.fr,lol
+sarah,sarah.drapeau@hotmail.fr,lol
+>>>>>>> develop
