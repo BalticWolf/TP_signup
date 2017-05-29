@@ -15,6 +15,7 @@ class SignUpController {
       let name = req.body.name;
       let email = req.body.email;
       let password = req.body.password;
+      let confirmPassword = req.body.confirmPassword;
       
       // vérification de la validité du mot de passe
 
