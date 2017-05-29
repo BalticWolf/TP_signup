@@ -7,19 +7,18 @@ block content
                 h1.display-4.m-b-2 Profile
 
                 // edit
+                button.btn.btn-primary(type='logout') Logout
 
                 form(method='POST' action='/profile')
                     div.form-group
                         label(for='name') Name:
                         input#name.form-control(type='text', placeholder='Your name' name='name')
+
                         div.form-group
-                        label(for='lastname') Lastname:
-                        input#lastname.form-control(type='text', placeholder='Lastname' name='lastname')
-                    div.form-group
-                        label(for='email') Email:
-                        input#email)
-
-
-
-                    button.btn.btn-primary(type='submit') Edit
+                                label(for='lastname') Lastname:
+                                input#lastname.form-control(type='text', placeholder='Lastname' name='lastname')
+                        div.form-group
+                                label(for='domaine') Domaine:
+                                input#domaine
+                    button.btn.btn-primary(type='submit') OK
 
