@@ -15,8 +15,7 @@ const app = express();
 // Module de parsing
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const signUpCtrl = new SignUpController(path);
-
+const signUpCtrl = new SignUpController(path, fs);
 const loginCtrl = new LoginController(path, fs);
 const userCtrl = new UserController();
 
