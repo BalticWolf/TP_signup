@@ -15,9 +15,13 @@ class SignUpController {
       let name = req.body.name;
       let email = req.body.email;
       let password = req.body.password;
+      let confirmPassword = req.body.confirmPassword;
       
-      // concaténation des données
+      // vérification de la validité du mot de passe
 
+      if(password === confirmPassword) {
+
+      // concaténation des données
 	  	let user = name +","+ email +","+ password +"\n";
 	 		 	
 	  	// écriture des données dans un fichier user.csv
@@ -29,6 +33,10 @@ class SignUpController {
         });
       
         res.render('loginAction');
+      }
+      else {
+        res.render('failSignAction', {user: name, email: email});
+      }
     }
 }
 
