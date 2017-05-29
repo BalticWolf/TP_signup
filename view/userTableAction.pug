@@ -1,0 +1,23 @@
+include profileAction
+|
+hr
+|
+block listEmail
+    .main.container
+        .row
+            .col-md-6.col-md-offset-3
+                table.table
+                    tr
+                        th Prenom
+                        th Nom
+                        th Domaine
+                        th e-mail
+
+                    each mail in mails
+                        tr
+                            td=fName
+                            td=lName
+                            td=domain
+                            td=mail
+
+                button.btn.btn-primary(type="submit" onclick="window.open('data/mail.csv')") Download

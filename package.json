@@ -1,0 +1,28 @@
+{
+  "name": "tp_signup",
+  "version": "1.0.0",
+  "description": "TP signup",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app/index.js 8081"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BalticWolf/TP_signup.git"
+  },
+  "author": "Timothee AUPETIT <timothee.aupetit@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BalticWolf/TP_signup/issues"
+  },
+  "homepage": "https://github.com/BalticWolf/TP_signup#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "formulaire": "0.0.8",
+    "pug": "^2.0.0-rc.1"
+  },
+  "devDependencies": {
+    "pug": "^2.0.0-rc.1"
+  }
+}
