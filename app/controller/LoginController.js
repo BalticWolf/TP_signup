@@ -25,15 +25,14 @@ class LoginController {
 
         // boucler sur le tableau users
         users.forEach(item => {
-            console.log(item);
-            const user = item.split(',');
-
+            const user = item.trim().split(',');
             if (user[1] === email && user[2] === password) {
                 res.render('profileAction');
                 return;
             }
         });
-        console.log('utilisateur inconnu');
+        //res.render('loginAction');
+        console.log('utilisateur inconnu')
     }
 }
 
