@@ -17,14 +17,13 @@ class UserController {
         const listMailsLFirstname = symbols.map(symbol => `${lastname.substring(0, 1)}${symbol}${firstname}@${domain}`);
         const listMails = [...listMailsFirstnameLastname, ...listMailsLastnameFirstname, ...listMailsLFirstname];
 
-    //     let string = '';
-    //
-    //     listMails.forEach(mail => {
-    //         // string = string + `${args.firstname},${args.lastname},${args.domain},${mail}\n`;
-    //         string += `${args.firstname},${args.lastname},${args.domain},${mail}\n`;
-    // });
         console.log(listMails);
-        res.render('userTableAction', {mails: listMails});
+        res.render('userTableAction', {
+            fName: firstname,
+            lName: lastname,
+            domain: domain,
+            mails: listMails
+        });
     }
 }
 module.exports = UserController;
