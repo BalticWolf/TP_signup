@@ -1,0 +1,10 @@
+include layoutAction
+
+include userAction
+
+each mail in mails
+    tr
+        td
+            td= mail
+
+button(type="submit" onclick="window.open('data/mail.csv')") Download

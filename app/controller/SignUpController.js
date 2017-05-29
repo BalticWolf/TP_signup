@@ -10,13 +10,14 @@ class SignUpController {
         res.render('loginAction');
     }
     postSignUpAction(req, res) {
-    	// données récupérées du post
-	    let name = req.body.name;
-	  	let email = req.body.email;
-	  	let password = req.body.password;
-	  	let confirmPassword = req.body.confirmPassword;
-	  	
+      // données récupérées du post
+      let name = req.body.name;
+      let email = req.body.email;
+      let password = req.body.password;
+      let confirmPassword = req.body.confirmPassword;
+      
       // concaténation des données
+
 	  	let user = name +","+ email +","+ password +"\n";
 	 		 	
 	  	// écriture des données dans un fichier user.csv
