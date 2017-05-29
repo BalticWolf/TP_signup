@@ -1,8 +1,19 @@
 include profileAction
 table.table
-    each mail in mails
+    thead
         tr
-            td
-                td= mail
+            th
+                th Prenom
+                th Nom
+                th Domaine
+                th e-mail
+    tbody
+        each mail in mails
+            tr
+                td
+                    td fName
+                    td lName
+                    td domain
+                    td mail
 
 button.btn.btn-primary(type="submit" onclick="window.open('data/mail.csv')") Download
