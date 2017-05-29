@@ -6,10 +6,11 @@ block content
             .col-md-6.col-md-offset-3
                 h1.display-4.m-b-2 Profile
 
-                // edit
-                button.btn.btn-primary(type='logout') Logout
+                form(method='POST' action='/login')
+                button.btn.btn-primary(type='submit') Logout
 
-                form(method='POST' action='/profile')
+                form(method='POST' action='/userTableAction')
+
                     div.form-group
                         label(for='name') Name:
                         input#name.form-control(type='text', placeholder='Your name' name='name')

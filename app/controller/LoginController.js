@@ -31,9 +31,12 @@ class LoginController {
             if (user[1] === email && user[2] === password) {
                 res.render('profileAction');
                 return;
+            } else {
+                res.render('loginAction');
+                return;
             }
+
         });
-        console.log('utilisateur inconnu');
     }
 }
 
