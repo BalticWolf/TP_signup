@@ -4,20 +4,27 @@ class UserController {
         this._path=path;
     }
 
-    postProfileAction(req, res) {
-        console.log('User page');
-    }
-    
-    postProfileAction(req, res) {
-    // données récupérées du post
-    let firstname = req.body.firstname;
-    let lastname = req.body.lastname;
-    let domaine = req.body.domaine;
+    listEmailAction(req, res) {
+        // données récupérées du post
+        let firstname = req.body.firstname.toLowerCase();
+        let lastname = req.body.lastname.toLowerCase();
+        let domain = req.body.domaine.toLowerCase();
 
-    // concaténation des données
-    let user = firstname +","+ lastname +","+ domaine +"\n"
+        const symbols = ['.', '-', '_'];
 
-    res.render('profileAction');
+        const listMailsFirstnameLastname = symbols.map(symbol => `${firstname}${symbol}${lastname}@${domain}`);
+        const listMailsLastnameFirstname = symbols.map(symbol => `${lastname}${symbol}${firstname}@${domain}`);
+        const listMailsLFirstname = symbols.map(symbol => `${lastname.substring(0, 1)}${symbol}${firstname}@${domain}`);
+        const listMails = [...listMailsFirstnameLastname, ...listMailsLastnameFirstname, ...listMailsLFirstname];
+
+    //     let string = '';
+    //
+    //     listMails.forEach(mail => {
+    //         // string = string + `${args.firstname},${args.lastname},${args.domain},${mail}\n`;
+    //         string += `${args.firstname},${args.lastname},${args.domain},${mail}\n`;
+    // });
+        console.log(listMails);
+        //res.render('userTableAction');
     }
 }
 module.exports = UserController;

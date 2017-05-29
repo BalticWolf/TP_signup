@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 const signUpCtrl = new SignUpController(path, fs);
 const loginCtrl = new LoginController(path, fs);
-const userCtrl = new UserController();
+const userCtrl = new UserController(path);
 
 
 // Définition de l'emplacement des templates de génération de vues
