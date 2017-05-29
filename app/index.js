@@ -24,9 +24,8 @@ app.set('views', path.join(__dirname, '/../view'));
 
 // Définition du mapping
 app.get('/', signUpCtrl.getSignUpAction);
-//app.get('/login', loginCtrl.getLoginAction);
+app.get('/login', signUpCtrl.getLoginAction.bind(signUpCtrl));
 
-// Récupération des données post
 app.use('/login', signUpCtrl.postSignUpAction.bind(signUpCtrl));
 app.use('/profile', loginCtrl.postLoginAction.bind(loginCtrl));
 

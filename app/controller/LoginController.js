@@ -16,20 +16,24 @@ class LoginController {
         // lecture des données du fichier user.csv
         const csvFile = this._path.join('data', 'user.csv');
 
-        const content = this._fs.readFile(csvFile, 'utf8', (err) => {
+        const content = this._fs.readFileSync(csvFile, 'utf8', (err) => {
             if (err) throw err;
             console.log('The file has been found!');
         });
 
-        const users = content.split("\n");
+        let users = content.split("\n");
 
         // boucler sur le tableau users
-        // vérifier si l'utilisateur est dans le tableau
-        // si présent :
-            res.render('profileAction');
-            //return
-        // Si pas trouvé :
-            // afficher 'utilisateur inconnu'
+        users.forEach(item => {
+            console.log(item);
+            const user = item.split(',');
+
+            if (user[1] === email && user[2] === password) {
+                res.render('profileAction');
+                return;
+            }
+        });
+        console.log('utilisateur inconnu');
     }
 }
 
