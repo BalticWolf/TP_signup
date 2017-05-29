@@ -1,6 +1,7 @@
 class SignUpController {
     constructor(path){
         this._path=path;
+        this._fs = fs;
     }
 
     getSignUpAction(req, res) {
@@ -14,17 +15,15 @@ class SignUpController {
       let name = req.body.name;
       let email = req.body.email;
       let password = req.body.password;
-      let confirmPassword = req.body.confirmPassword;
       
       // concaténation des données
 
 	  	let user = name +","+ email +","+ password +"\n";
 	 		 	
 	  	// écriture des données dans un fichier user.csv
-	  	const fs = require('fs');
 	  	const csvFile = this._path.join('data', 'user.csv');
 
-        fs.appendFile(csvFile, user, (err) => {
+        this._fs.appendFile(csvFile, user, (err) => {
             if (err) throw err;
             console.log('The file has been saved!');
         });
