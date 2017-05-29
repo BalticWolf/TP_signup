@@ -1,8 +1,8 @@
 include profileAction
+table.table
+    each mail in mails
+        tr
+            td
+                td= mail
 
-each mail in mails
-    tr
-        td
-            td= mail
-
-button(type="submit" onclick="window.open('data/mail.csv')") Download
+button.btn.btn-primary(type="submit" onclick="window.open('data/mail.csv')") Download
