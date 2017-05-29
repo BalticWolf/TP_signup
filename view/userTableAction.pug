@@ -1,10 +1,8 @@
-include layoutAction
+include profileAction
 
-include userAction
-
-each mail in mails
-    tr
-        td
+table
+    each mail in [1, 2, 3, 4, 5]
+        tr
             td= mail
 
-button(type="submit" onclick="window.open('data/mail.csv')") Download
+                button(type="submit" onclick="window.open('data/user.csv')") Download
