@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
-var bodyParser = require("body-parser");
+const bodyParser = require("body-parser");
 
 const SignUpController = require('./controller/SignUpController');
 const LoginController = require('./controller/LoginController');
@@ -14,6 +14,7 @@ const app = express();
 
 // Module de parsing
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const signUpCtrl = new SignUpController(path, fs);
 const loginCtrl = new LoginController(path, fs);
@@ -28,8 +29,8 @@ app.set('views', path.join(__dirname, '/../view'));
 app.get('/', signUpCtrl.getSignUpAction);
 app.get('/login', signUpCtrl.getLoginAction.bind(signUpCtrl));
 
-app.use('/login', signUpCtrl.postSignUpAction.bind(signUpCtrl));
-app.use('/profile', loginCtrl.postLoginAction.bind(loginCtrl));
-app.use('/profileEmail', userCtrl.listEmailAction.bind(userCtrl));
+app.post('/login', signUpCtrl.postSignUpAction.bind(signUpCtrl));
+app.post('/profile', loginCtrl.postLoginAction.bind(loginCtrl));
+app.post('/profileEmail', userCtrl.listEmailAction.bind(userCtrl));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
