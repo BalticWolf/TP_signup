@@ -16,13 +16,17 @@ class SignUpController {
       let password = req.body.password;
       let confirmPassword = req.body.confirmPassword;
       
+      // vérification de la validité du mot de passe
+
+      if(password === confirmPassword) {
+
       // concaténation des données
 
-	  	let user = name +","+ email +","+ password +"\n";
-	 		 	
-	  	// écriture des données dans un fichier user.csv
-	  	const fs = require('fs');
-	  	const csvFile = this._path.join('data', 'user.csv');
+      let user = name +","+ email +","+ password +"\n";
+        
+      // écriture des données dans un fichier user.csv
+      const fs = require('fs');
+      const csvFile = this._path.join('data', 'user.csv');
 
         fs.appendFile(csvFile, user, (err) => {
             if (err) throw err;
@@ -30,6 +34,12 @@ class SignUpController {
         });
       
         res.render('loginAction');
+      }
+      else {
+        res.render('failSignAction', {user: name, email: email});
+      }
+
+      
     }
 }
 
