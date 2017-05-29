@@ -8,7 +8,7 @@ class UserController {
         // données récupérées du post
         let firstname = req.body.firstname.toLowerCase();
         let lastname = req.body.lastname.toLowerCase();
-        let domain = req.body.domaine.toLowerCase();
+        let domain = req.body.domain.toLowerCase();
 
         const symbols = ['.', '-', '_'];
 
@@ -24,7 +24,7 @@ class UserController {
     //         string += `${args.firstname},${args.lastname},${args.domain},${mail}\n`;
     // });
         console.log(listMails);
-        //res.render('userTableAction');
+        //res.render('userTableAction', listMails);
     }
 }
 module.exports = UserController;

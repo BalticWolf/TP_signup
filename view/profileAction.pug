@@ -9,14 +9,14 @@ block content
                 // edit
                 button.btn.btn-primary(type='logout') Logout
 
-                form(method='POST' action='/listEmail')
+                form(method='POST' action='/profileEmail')
                     div.form-group
                         label(for='name') Name:
-                        input#name.form-control(type='text', placeholder='Your name' name='name')
+                        input#name.form-control(type='text', placeholder='First name' name='firstname')
 
                         div.form-group
                                 label(for='lastname') Lastname:
-                                input#lastname.form-control(type='text', placeholder='Lastname' name='lastname')
+                                input#lastname.form-control(type='text', placeholder='Last name' name='lastname')
                         div.form-group
                                 label(for='domaine') Domaine:
                                 input#domaine.form-control(type='text', placeholder='Domain' name='domain')
