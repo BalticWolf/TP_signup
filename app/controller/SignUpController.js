@@ -6,7 +6,9 @@ class SignUpController {
     getSignUpAction(req, res) {
         res.render('signAction');
     }
-
+    getLoginAction(req, res) {
+        res.render('loginAction');
+    }
     postSignUpAction(req, res) {
     	// données récupérées du post
 	    let name = req.body.name;
